@@ -1,0 +1,59 @@
+.mainPageWrapper {
+
+}
+
+.mainPageWrapper .mainPageIn {
+    margin-top: 60px;
+}
+
+.mainPageWrapper .topBlock {
+
+}
+
+.mainPageWrapper .topBlock h3 {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 26px;
+    color: #57aa2b;
+}
+
+.mainPageWrapper .topBlock p {
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: 400;
+}
+.mainPageWrapper .buttonWrapper{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 35px 0;
+}
+
+.buttonWrapper .buttonHelp {
+    border-radius: 23px;
+    background-color: rgb(219, 242, 253);
+    width: 164px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #57aa2b;
+    font-size: 18px;
+    line-height: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .3s all ease;
+}
+.buttonWrapper .buttonHelp:hover{
+    background-color: #b9e6fcc4;
+}
+.buttonWrapper .buttonHelp span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 100%;
+    border: 2px solid #57aa2b;
+    margin-right: 10px;
+}

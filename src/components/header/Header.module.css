@@ -1,0 +1,25 @@
+.headerWrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+    min-height: 150px;
+    color: #46adf3;
+}
+.headerWrapper .logo img{
+    display: block;
+}
+.headerWrapper .contacts{
+    margin-bottom: 20px;
+    text-align: center;
+}
+.contacts .phoneNumber{
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 26px;
+}
+.contacts .description{
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: 500;
+}
