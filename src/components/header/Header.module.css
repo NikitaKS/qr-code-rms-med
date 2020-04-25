@@ -23,3 +23,13 @@
     line-height: 20px;
     font-weight: 500;
 }
+@media (min-width: 0px) and (max-width: 767px) {
+    .headerWrapper{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .headerWrapper .contacts{
+        margin: 0;
+    }
+}

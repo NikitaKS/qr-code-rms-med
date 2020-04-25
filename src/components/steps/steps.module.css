@@ -12,6 +12,7 @@
     font-weight: 600;
     color: #46adf3;
 }
+
 .stepWrapper .stepIn p {
     font-size: 16px;
     line-height: 16px;
@@ -19,6 +20,7 @@
     color: #000000;
     margin-top: 30px;
 }
+
 .stepIn .qrBlock {
     display: flex;
     min-height: 200px;
@@ -63,4 +65,52 @@
 
 .stepIn .qrBlock .right .qrWrapper .icon img {
     display: block;
+}
+
+@media (min-width: 0px) and (max-width: 767px) {
+    .stepWrapper {
+        margin-top: 25px;
+    }
+
+    .stepWrapper .stepIn h2 {
+        font-size: 26px;
+        line-height: 34px;
+    }
+
+    .stepWrapper .stepIn p {
+        margin-top: 15px;
+    }
+
+    .stepIn .qrBlock {
+        flex-direction: column;
+        padding: 20px 15px;
+    }
+
+    .stepIn .qrBlock .left {
+        width: 100%;
+        padding: 0;
+    }
+
+    .stepIn .qrBlock .left p {
+        font-size: 25px;
+        line-height: 34px;
+    }
+
+    .stepIn .qrBlock .right {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .stepIn .qrBlock .right .qrWrapper {
+        margin-top: 20px;
+    }
+}
+
+@media (min-width: 480px) and (max-width: 767px) {
+    .stepIn .qrBlock .right {
+        flex-direction: row;
+        justify-content: space-around;
+    }
 }

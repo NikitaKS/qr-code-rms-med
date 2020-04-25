@@ -22,6 +22,7 @@ const QrComponent = (props) => {
 
 const Step = (props) => {
     const {title, desc, textBlock} = props.stepData;
+    const url = `https://mp.rms-med.ru/RMS/register?token=${props.token}`;
     return (
         <div className={s.stepWrapper}>
             <div className={s.stepIn}>
@@ -43,7 +44,7 @@ const Step = (props) => {
                                     />
                                 </>
                                 :
-                                <QrComponent size={150} show={false} qrURL={props.token}/>
+                                <QrComponent size={150} show={false} qrURL={url}/>
                         }
                     </div>
                 </div>

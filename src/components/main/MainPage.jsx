@@ -1,9 +1,8 @@
-import React, {Component} from 'react';
+import React from 'react';
 import s from './MainPage.module.css';
 import Step from "../steps/Step";
 import {useParams} from 'react-router-dom';
 import Header from "../header/Header";
-import {ReactComponent as Question} from '../../assets/question.svg';
 
 const MainPage = () => {
     const {token} = useParams()

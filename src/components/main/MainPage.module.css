@@ -4,6 +4,7 @@
 
 .mainPageWrapper .mainPageIn {
     margin-top: 60px;
+    width: 100%;
 }
 
 .mainPageWrapper .topBlock {
@@ -22,7 +23,8 @@
     line-height: 26px;
     font-weight: 400;
 }
-.mainPageWrapper .buttonWrapper{
+
+.mainPageWrapper .buttonWrapper {
     width: 100%;
     display: flex;
     justify-content: flex-end;
@@ -44,9 +46,11 @@
     cursor: pointer;
     transition: .3s all ease;
 }
-.buttonWrapper .buttonHelp:hover{
+
+.buttonWrapper .buttonHelp:hover {
     background-color: #b9e6fcc4;
 }
+
 .buttonWrapper .buttonHelp span {
     display: flex;
     justify-content: center;
@@ -56,4 +60,22 @@
     border-radius: 100%;
     border: 2px solid #57aa2b;
     margin-right: 10px;
+}
+
+@media (min-width: 0px) and (max-width: 767px) {
+    .mainPageWrapper .mainPageIn {
+        margin-top: 25px;
+    }
+
+    .mainPageWrapper .topBlock h3 {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .mainPageWrapper .topBlock h3 {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+
 }
