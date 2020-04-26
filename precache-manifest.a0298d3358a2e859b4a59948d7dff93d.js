@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "77ba2e80870b13533287753702aa5fad",
+    "revision": "cfdaa6c2ea3830e197cc617b3d6dc29c",
     "url": "/qr-code-rms-med/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/qr-code-rms-med/static/css/2.117ce29f.chunk.css"
   },
   {
-    "revision": "c995460184e900d56939",
+    "revision": "8db9e201572f5ebb767b",
     "url": "/qr-code-rms-med/static/css/main.c76d8c0b.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/qr-code-rms-med/static/js/2.98179ada.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "c995460184e900d56939",
-    "url": "/qr-code-rms-med/static/js/main.294f1a32.chunk.js"
+    "revision": "8db9e201572f5ebb767b",
+    "url": "/qr-code-rms-med/static/js/main.7e880f7c.chunk.js"
   },
   {
     "revision": "bb35defa8360806c0202",
