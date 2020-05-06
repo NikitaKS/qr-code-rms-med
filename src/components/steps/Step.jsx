@@ -2,7 +2,7 @@ import React from 'react';
 import QRCode from 'qrcode.react';
 import s from './steps.module.css';
 import appleStore from '../../assets/appStore.png';
-import googlePlay from '../../assets/googlePlay.png';
+import googlePlay from '../../assets/google.png';
 
 
 const QrComponent = (props) => {
@@ -11,7 +11,9 @@ const QrComponent = (props) => {
             {
                 props.show &&
                 <div className={s.icon}>
-                    <img src={props.img} alt=""/>
+                    <a href={props.qrURL} target="_blank" rel='noopener noreferrer'>
+                        <img src={props.img} alt="app"/>
+                    </a>
                 </div>
             }
             <QRCode value={props.qrURL} size={props.size}/>
@@ -22,7 +24,11 @@ const QrComponent = (props) => {
 
 const Step = (props) => {
     const {title, desc, textBlock} = props.stepData;
-    const url = `https://mp.rms-med.ru/RMS/register?token=${props.token}`;
+    const urls = {
+        appleUrl: 'https://apps.apple.com/ru/app/%D0%BC%D0%B5%D0%B4%D1%81%D0%B5%D1%80%D0%B2%D0%B8%D1%81/id1447371409',
+        googleUrl: 'https://play.google.com/store/apps/details?id=com.gravitygroup.rms&hl=ru',
+        uniqueUrl: `https://mp.rms-med.ru/RMS/register?token=${props.token}`
+    };
     return (
         <div className={s.stepWrapper}>
             <div className={s.stepIn}>
@@ -36,15 +42,13 @@ const Step = (props) => {
                         {
                             props.count === 2 ?
                                 <>
-                                    <QrComponent size={80} show={true} qrURL={'AppStore'}
-                                                 img={appleStore}
-                                    />
-                                    <QrComponent size={80} show={true} qrURL={'google Play'}
-                                                 img={googlePlay}
-                                    />
+                                    <QrComponent size={80} show={true} qrURL={urls.appleUrl}
+                                                 img={appleStore}/>
+                                    <QrComponent size={80} show={true} qrURL={urls.googleUrl}
+                                                 img={googlePlay}/>
                                 </>
                                 :
-                                <QrComponent size={150} show={false} qrURL={url}/>
+                                <QrComponent size={150} show={false} qrURL={urls.uniqueUrl}/>
                         }
                     </div>
                 </div>
