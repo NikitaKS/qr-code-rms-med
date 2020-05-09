@@ -1,0 +1,102 @@
+.formSteps {
+    width: 100%;
+    padding: 15px 10px;
+    background-color: #ffffff;
+}
+
+.formSteps .controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.formSteps .controls .item {
+    height: 4px;
+    flex: auto;
+    position: relative;
+    padding: 0 0 0 15px;
+}
+
+.formSteps .controls .item:before{
+    content: '';
+    position: absolute;
+}
+.formSteps .controls .item:last-child span{
+    display: none;
+}
+
+.formSteps .controls .item:last-child:after, .formSteps .controls .item:before {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: grey;
+    left: 0;
+    top: calc(50% - 5px);
+}
+
+.formSteps .controls .item:last-child {
+    flex: none;
+    padding-right: 0;
+    /*padding-right: 15px;*/
+}
+.formSteps .controls .item:last-child:after {
+    left: auto;
+    right: 0;
+}
+.formSteps .controls .item span {
+    background: grey;
+    display: block;
+    width: 100%;
+    height: 100%;
+    transition: 0.5s;
+}
+.formSteps .controls .item:first-child span{
+    background: #0f8dbd;
+}
+.formSteps .controls .item + .item {
+    margin-left: 5px;
+}
+
+.formSteps .controls .item.active:before,
+.formSteps .controls .item.active:after{
+/*.formSteps .controls .item.active span {*/
+    background: #0f8dbd;
+}
+
+/*.formSteps .controls .item:hover:before, .formSteps .controls .item:hover:after, .formSteps .controls .item:hover span, .formSteps .controls .item.active:before, .formSteps .controls .item.active:after, .formSteps .controls .item.active span {*/
+/*    background: blue;*/
+/*}*/
+.formSteps .controls .item.active {
+    cursor: default;
+    padding-left: 20px;
+}
+
+.formSteps .controls .item.active:before {
+    width: 15px;
+    height: 15px;
+    top: calc(50% - 7.5px);
+}
+
+.formSteps .controls .item.active:last-child:after {
+    width: 15px;
+    height: 15px;
+    top: calc(50% - 7.5px);
+}
+
+.formSteps .controls .item.active:last-child span {
+    margin-right: 5px;
+}
+
+.formSteps .content {
+    border: 1px solid #dedede;
+    margin-top: 15px;
+    padding: 15px;
+}
+
+.formSteps .content .item {
+    display: none;
+}
+
+.formSteps .content .item.active {
+    display: block;
+}

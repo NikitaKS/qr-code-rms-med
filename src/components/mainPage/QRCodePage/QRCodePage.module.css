@@ -1,30 +1,30 @@
-.mainPageWrapper {
+.qrPageWrapper {
 
 }
 
-.mainPageWrapper .mainPageIn {
+.qrPageWrapper .qrPageIn {
     margin-top: 30px;
     width: 100%;
 }
 
-.mainPageWrapper .topBlock {
+.qrPageWrapper .topBlock {
 
 }
 
-.mainPageWrapper .topBlock h3 {
+.qrPageWrapper .topBlock h3 {
     font-weight: 600;
     font-size: 18px;
     line-height: 26px;
     color: #57aa2b;
 }
 
-.mainPageWrapper .topBlock p {
+.qrPageWrapper .topBlock p {
     font-size: 18px;
     line-height: 26px;
     font-weight: 400;
 }
 
-.mainPageWrapper .footerWrapper {
+.qrPageWrapper .footerWrapper {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -32,26 +32,26 @@
     justify-content: flex-end;
     padding: 20px 0;
 }
-.mainPageWrapper .footerWrapper p{
+.qrPageWrapper .footerWrapper p{
     width: 100%;
     font-size: 13px;
     line-height: 21px;
 }
-.mainPageWrapper .footerWrapper p span{
+.qrPageWrapper .footerWrapper p span{
     font-weight: 600;
 }
 
 @media (min-width: 0px) and (max-width: 767px) {
-    .mainPageWrapper .mainPageIn {
+    .qrPageWrapper .mainPageIn {
         margin-top: 25px;
     }
 
-    .mainPageWrapper .topBlock h3 {
+    .qrPageWrapper .topBlock h3 {
         font-size: 16px;
         line-height: 24px;
     }
 
-    .mainPageWrapper .topBlock h3 {
+    .qrPageWrapper .topBlock h3 {
         font-size: 16px;
         line-height: 24px;
     }

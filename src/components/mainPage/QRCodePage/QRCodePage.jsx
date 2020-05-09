@@ -1,11 +1,9 @@
 import React from 'react';
-import s from './MainPage.module.css';
-import Step from "../steps/Step";
-import {useParams} from 'react-router-dom';
-import Header from "../header/Header";
+import s from './QRCodePage.module.css';
+import Step from "../../steps/Step";
+import Header from "../../header/Header";
 
-const MainPage = () => {
-    const {token} = useParams()
+const QRCodePage = ({token}) => {
     const stepData = {
         stepOne: {
             title: 'Шаг 1: Скачайте мобильное приложение',
@@ -19,10 +17,10 @@ const MainPage = () => {
         }
     }
     return (
-        <div className={s.mainPageWrapper}>
+        <div className={s.qrPageWrapper}>
             <div className="container">
                 <Header/>
-                <div className={s.mainPageIn}>
+                <div className={s.qrPageIn}>
                     <div className={s.topBlock}>
                         <h3>Уважаемый клиент!</h3>
                         <p>
@@ -50,4 +48,4 @@ const MainPage = () => {
         </div>
     )
 }
-export default MainPage;
+export default QRCodePage;
