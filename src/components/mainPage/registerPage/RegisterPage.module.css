@@ -1,19 +1,28 @@
 .mainPageWrapper {
-    /*background-color: #149bd2;*/
-    height: 100%;
+    background-color: #149bd2;
+    min-height: 100%;
     width: 100%;
 }
 
 .mainPageWrapper .top {
     background-color: #ffffff;
-    /*width: 450px;*/
     width: 100%;
     font-size: 18px;
     line-height: 26px;
     padding-left: 10px;
     padding-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
 }
-
+.mainPageWrapper .top img{
+    display: block;
+    width: 26px;
+    height: 26px;
+    margin-right: 10px;
+    transform: rotate(180deg);
+    cursor: pointer;
+}
 .mainPageWrapper .header {
     display: flex;
     justify-content: space-between;

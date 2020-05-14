@@ -5,12 +5,16 @@ const instance = axios.create({
 })
 
 export const registerAPI = {
-    async registerStep1(token) {
+    async registerByToken(token) {
         let tokenData = {"registrationToken": token}
         return instance.post(`/register_by_token`, tokenData)
             .then((res) => {
                 return res.data.data.user
             })
+    },
+    async sendSms(phone) {
+        return instance.post('/register', {phone: phone})
+            .then((res) => res.data)
     },
     async getCaptchaConfig(id) {
         return instance.get(`/register/${id}/captcha/configuration`)
@@ -24,14 +28,13 @@ export const registerAPI = {
             })
     },
     async getSmsCode(id) {
-        return instance.post(`/register/${id}/sendcode`,{})
+        return instance.post(`/register/${id}/sendcode`, {})
             .then((res) => {
-                return res.data
+                return res.data.data.codeOtp
             })
     }, async confirmRegistration(id, dataFormServer) {
         return instance.post(`/register/${id}/confirm`, dataFormServer)
             .then((res) => {
-
                 return res.data
             })
     },

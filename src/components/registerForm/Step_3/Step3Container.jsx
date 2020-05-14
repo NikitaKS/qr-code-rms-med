@@ -2,7 +2,6 @@ import React from 'react';
 import Step3 from "./Step3";
 
 const Step3Container = (props) => {
-
     return (
         <>
             <Step3 {...props} />
@@ -10,4 +9,4 @@ const Step3Container = (props) => {
     )
 
 }
-export default (Step3Container);
+export default Step3Container;

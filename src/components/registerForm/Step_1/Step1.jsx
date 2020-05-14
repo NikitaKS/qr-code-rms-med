@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
-import {withRouter} from "react-router-dom";
 import s from "../RegisterForm.module.css";
 import MaskedInput from "react-input-mask";
 import {useForm} from "react-hook-form";
+import {statuses} from "../../../helpers/constants";
 
 const Step1 = (props) => {
     const {register, handleSubmit, errors} = useForm();
@@ -11,11 +11,14 @@ const Step1 = (props) => {
         v && v.indexOf("_") === -1 ? undefined : "Введите номер телефона";
 
     const onSubmit = (data) => {
-        props.history.push('./2')
+        const number = data.phoneNumber.match(/[0-9]/g).join('');
+        props.sendSms(number)
         props.setFormData(data)
-        props.setStep(2)
-    };
 
+    };
+    if (props.status === statuses.success) {
+        props.setStep(2)
+    }
     return (
         <>
             <form onSubmit={handleSubmit(onSubmit)} className={s.registerForm}>
@@ -42,6 +45,7 @@ const Step1 = (props) => {
                     <span>*Дата рождения:</span>
                     <div className={s.inputDate}>
                         <input type={'text'} name="date"
+                               ref={register({required: true})}
                                defaultValue={props.userData && props.userData.birthday}
                                disabled/>
                         <div><span></span></div>
@@ -68,9 +72,12 @@ const Step1 = (props) => {
                         <span>{errors.phoneNumber.message}</span>
                     }
                 </div>
-                <button className={s.btn} type="submit">Выслать СМС с кодом</button>
+                <button className={s.btn} disabled={props.status === statuses.loading}
+                        type="submit">
+                    Выслать СМС с кодом
+                </button>
             </form>
         </>
     )
 }
-export default withRouter(Step1);
+export default Step1;

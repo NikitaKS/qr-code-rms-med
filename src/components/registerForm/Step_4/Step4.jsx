@@ -1,15 +1,14 @@
 import React, {useState} from 'react';
 import {useForm} from "react-hook-form";
-import {withRouter} from "react-router-dom";
 import s from '../RegisterForm.module.css';
 
 const Step4 = (props) => {
     const {register, handleSubmit, errors} = useForm();
-    const [checked, setChecked] = useState(false)
+    const [checked, setChecked] = useState(true)
     const onSubmit = (data) => {
         if (checked) {
-            console.log(data)
             props.setFormData(data)
+            props.confirmRegister()
         }
     };
     return (
@@ -17,19 +16,19 @@ const Step4 = (props) => {
             <form onSubmit={handleSubmit(onSubmit)} className={s.registerForm}>
                 <div className={s.formItem}>
                     <span>Проверьте свои данные:</span>
-                    <input type={'text'} name="secondName"
+                    <div className={s.formItem}>
+                        <input type={'text'} name="surname"
+                               defaultValue={props.userData && props.userData.lastName}
+                               ref={register({required: true})}
+                               disabled/>
+                    </div>
+                    <input type={'text'} name="firstName"
                            defaultValue={props.userData && props.userData.firstName}
                            ref={register}
                            disabled/>
                 </div>
                 <div className={s.formItem}>
-                    <input type={'text'} name="firstName"
-                           defaultValue={props.userData && props.userData.lastName}
-                           ref={register({required: true})}
-                           disabled/>
-                </div>
-                <div className={s.formItem}>
-                    <input type={'text'} name="surname"
+                    <input type={'text'} name="secondName"
                            defaultValue={props.userData && props.userData.secondName}
                            ref={register({required: true})}
                            disabled/>
@@ -38,6 +37,7 @@ const Step4 = (props) => {
                     <span>*Дата рождения:</span>
                     <div className={s.inputDate}>
                         <input type={'text'} name="date"
+                               ref={register({required: true})}
                                defaultValue={props.userData && props.userData.birthday}
                                disabled/>
                         <div><span></span></div>
@@ -60,6 +60,9 @@ const Step4 = (props) => {
                         errors && errors.email
                         && <span>{errors.email.message}</span>
                     }
+                    {/*<input type={'text'} name="email"*/}
+                    {/*       defaultValue={props.userData && props.userData.email}*/}
+                    {/*       ref={register()} disabled/>*/}
                 </div>
                 <button className={s.btn} disabled={!checked} type="submit">
                     Завершить регистрацию
@@ -75,9 +78,8 @@ const Step4 = (props) => {
                     Внимательно укажите персональные <br/> данные,
                     это влияет на корректное <br/> оформление медицинской карты
                 </div>
-                {/*todo:зарефакторить фон для родителя а не для формы*/}
             </form>
         </>
     )
 }
-export default withRouter(Step4);
+export default Step4;

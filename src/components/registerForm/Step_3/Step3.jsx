@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import {useForm} from "react-hook-form";
 import s from "../RegisterForm.module.css";
-import {withRouter} from "react-router-dom";
 import arrow from "../../../assets/rightArrow.svg";
 import showIcon from "../../../assets/view.svg";
 
@@ -9,10 +8,8 @@ const Step3 = (props) => {
     const {register, handleSubmit, errors} = useForm();
     const [showPass, setShow] = useState(false);
     const onSubmit = (data) => {
-        console.log(data)
-        props.history.push('./4')
-        props.setFormData(data)
         props.setStep(4)
+        props.setFormData(data)
     };
     return (
         <>
@@ -27,8 +24,8 @@ const Step3 = (props) => {
                                    message: 'Не мнее 4-х символов'
                                }
                            })} placeholder={'Пароль'}/>
-                    <div className={s.showIcon} onMouseDown={() => setShow(true)}
-                         onMouseUp={() => setShow(false)}>
+                    <div className={s.showIcon} onTouchStart={() => setShow(true)}
+                         onTouchEnd={() => setShow(false)}>
                         <img src={showIcon} alt=""/>
                     </div>
                 </div>
@@ -45,4 +42,4 @@ const Step3 = (props) => {
         </>
     )
 }
-export default withRouter(Step3);
+export default Step3;

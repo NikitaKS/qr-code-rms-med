@@ -3,30 +3,31 @@ import s from './mobileBanner.module.css';
 import logo from '../../assets/logoForBanner.png';
 
 const MobileBanner = (props) => {
+    const setDate = () => {
+        props.setShowBanner(false)
+        props.setDate()
+    }
     return (
         <div className={s.bannerWrapper}>
             <div className={s.left}>
-                <div className={s.closeBtn}>x</div>
+                <div className={s.closeBtn} onClick={setDate}></div>
                 <div className={s.logo}>
                     <img src={logo} alt="#"/>
                 </div>
             </div>
             <div className={s.right}>
                 <div className={s.body}>
-                    <span>Хочу к врачу</span>
+                    <span>Медсервис</span>
                     <span>Медицина</span>
                     <div className={s.rating}>
-                        <span>☆</span>
-                        <span>☆</span>
-                        <span>☆</span>
-                        <span>☆</span>
-                        <span>☆</span>
-                        <p>4.8</p>
-                        {/*<img src={star} alt="#"/>*/}
-                        {/*<img src={star} alt="#"/>*/}
-                        {/*<img src={star} alt="#"/>*/}
-                        {/*<img src={star} alt="#"/>*/}
-                        {/*<img src={star} alt="#"/>*/}
+                        <span className={s.rait}>
+                        <span className={s.orange}>★★★★</span>
+                            <span className={s.half}>
+                                <div>★</div>
+                                <div>★</div>
+                            </span>
+                        </span>
+                        <p>4.5</p>
                     </div>
                     <span>Беслатно</span>
                 </div>
