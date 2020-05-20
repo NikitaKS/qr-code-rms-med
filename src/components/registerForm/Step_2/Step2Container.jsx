@@ -1,7 +1,8 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import Step2 from "./Step2";
 import {useDispatch, useSelector} from "react-redux";
-import {resendSms} from "../../../redux/registerReducer/registerReducer";
+import {resendSms, setStatus} from "../../../redux/registerReducer/registerReducer";
+import {statuses} from "../../../helpers/constants";
 
 const Step2Container = (props) => {
     const dispatch = useDispatch()
@@ -9,6 +10,11 @@ const Step2Container = (props) => {
     const resend = () => {
         dispatch(resendSms())
     }
+    useEffect(() => {
+        return () => {
+            dispatch(setStatus(statuses.notInit))
+        }
+    }, [dispatch])
     return (
         <>
             <Step2 {...props} code={code} resend={resend}/>

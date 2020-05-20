@@ -21,7 +21,7 @@ const Step2 = (props) => {
         return i;
     }
 
-    const [time, setTime] = useState(12000)
+    const [time, setTime] = useState(120000)
 
     let min = addZero(Math.floor((time / 1000 / 60) << 0));
     let sec = addZero(Math.floor((time / 1000) % 60));
@@ -36,14 +36,13 @@ const Step2 = (props) => {
     }, [time])
     const resend = () => {
         props.resend(props.phoneNumber.match(/[0-9]/g).join(''))
-        setTime(12000)
+        setTime(120000)
     }
     return (
         <>
             <form onSubmit={handleSubmit(onSubmit)} className={`${s.registerForm} ${s.step2}`}>
                 <div className={s.formItem}>
                     <span>На номер {props.phoneNumber} отправлено СМС с кодом активации</span>
-                    <span style={{color: 'black', fontWeight: "600"}}>sms code: {props.code}</span>
                     <input className={s.inputPhoneNumber} name="smsCode" placeholder={'Введите код из СМС'}
                            type={'number'} autoComplete={'off'}
                            ref={register({required: true})}/>

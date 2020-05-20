@@ -17,21 +17,29 @@ const MobileBanner = (props) => {
             </div>
             <div className={s.right}>
                 <div className={s.body}>
-                    <span>Медсервис</span>
-                    <span>Медицина</span>
-                    <div className={s.rating}>
-                        <span className={s.rait}>
+                    <div>
+                        <span>Медсервис</span>
+                    </div>
+                    <div>
+                        <span>Медицина</span>
+                    </div>
+                    <div className={s.rait}>
                         <span className={s.orange}>★★★★</span>
-                            <span className={s.half}>
+                        <span className={s.half}>
                                 <div>★</div>
                                 <div>★</div>
                             </span>
-                        </span>
                         <p>4.5</p>
                     </div>
-                    <span>Беслатно</span>
+                    <div>
+                        <span>Беслатно</span>
+                    </div>
                 </div>
-                <div className={s.link}>Смотреть</div>
+                <div className={s.link}>
+                    <a href={props.url} target={'_black'}>
+                        Смотреть
+                    </a>
+                </div>
             </div>
         </div>
     )

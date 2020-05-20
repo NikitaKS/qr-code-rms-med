@@ -1,0 +1,56 @@
+.modalWrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+}
+
+.modalError {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-weight: 500;
+    position: relative;
+    font-size: 14px;
+    width: 320px;
+    height: 55px;
+    background-color: #f44336;
+    box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2),
+    0px 6px 10px 0px rgba(0, 0, 0, 0.14),
+    0px 1px 18px 0px rgba(0, 0, 0, 0.12);
+    border-radius: 4px;
+    margin-bottom: 30px;
+}
+
+.closeBtn {
+    cursor: pointer;
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+.closeBtn:before, .closeBtn:after {
+    position: absolute;
+    right: 6px;
+    content: ' ';
+    height: 14px;
+    width: 2px;
+    background-color: #ffffff;
+}
+
+.closeBtn:before {
+    transform: rotate(45deg);
+}
+
+.closeBtn:after {
+    transform: rotate(-45deg);
+}

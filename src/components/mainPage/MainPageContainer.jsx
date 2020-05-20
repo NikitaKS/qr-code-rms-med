@@ -12,14 +12,11 @@ const MainPageComponent = () => {
         <div className={s.mainPageWrapper}>
             {
                 !isMobile && !isTablet
-                &&
-                <QRCodePage token={token}/>
-
+                && <QRCodePage token={token}/>
             }
             {
-                (isMobile || isTablet)
-                &&
-                <RegisterPageComponent/>
+                (isMobile)
+                && <RegisterPageComponent/>
             }
 
         </div>
