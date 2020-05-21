@@ -10,4 +10,4 @@ const rootReducer = combineReducers({
 const store = createStore(rootReducer, applyMiddleware(thunk));
 export default store;
 // @ts-ignore
-window.store = store;
+window.__store__ = store;

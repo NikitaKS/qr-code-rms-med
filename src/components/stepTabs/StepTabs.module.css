@@ -37,7 +37,6 @@
 .formSteps .controls .item:last-child {
     flex: none;
     padding-right: 0;
-    /*padding-right: 15px;*/
 }
 .formSteps .controls .item:last-child:after {
     left: auto;
@@ -59,13 +58,9 @@
 
 .formSteps .controls .item.active:before,
 .formSteps .controls .item.active:after{
-/*.formSteps .controls .item.active span {*/
     background: #0f8dbd;
 }
 
-/*.formSteps .controls .item:hover:before, .formSteps .controls .item:hover:after, .formSteps .controls .item:hover span, .formSteps .controls .item.active:before, .formSteps .controls .item.active:after, .formSteps .controls .item.active span {*/
-/*    background: blue;*/
-/*}*/
 .formSteps .controls .item.active {
     cursor: default;
     padding-left: 20px;
